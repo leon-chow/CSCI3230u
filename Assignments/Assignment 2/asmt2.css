@@ -1,3 +1,18 @@
 #weather {
   right:450px;
 }
+
+#forecast {
+  position:absolute;
+  left:200px;
+}
+
+#forecastTable {
+  padding: 100px;
+  border-spacing:100px;
+}
+
+#tableHolder {
+  width: 800px;
+  height:800px;
+}

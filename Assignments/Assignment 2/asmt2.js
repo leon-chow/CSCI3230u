@@ -3,7 +3,7 @@ var key = "ee6968667b034938af1152649182103";
 $(document).ready(function() {
   $("#goButton").click( function() {
     downloadWeather();
-    //downloadForecast();
+    downloadForecast();
   })
 })
 
@@ -19,7 +19,7 @@ function downloadWeather() {
 
     //temperature
     var currentTemp = data.current.temp_c;
-    //var highTemp = data.forecast.forecastday=>.maxtemp_c;
+    //var highTemp = data.forecast.forecastday.day.max_temp_c;
 
     //wind
     var windDirection = data.current.wind_dir;
@@ -29,14 +29,38 @@ function downloadWeather() {
     $("#weather").append("<div>Current: " + currentTemp + "°C</br>Low:°C </br>" +// lowTemp </br>High:" + highTemp + "°C</br>Feels Like:" + feelsLike + "°C</div>");
                          "</br>Condition </br> </br>" + condition + "</br>Cloud cover:" + cloudCover + "%</br>Humidty:" + humidity +
                          "%</br>Pressure:" + pressureMB + "mB</br> </br> Wind </br> </br> Direction:" + windDirection + "°</br>Speed: " +
-                         windSpeed + "km/h</br>");
+                         windSpeed + "km/h</br> </div>");
   });
 };
 
-/*function downloadForecast() {
+function downloadForecast() {
+  var url = "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&days=7&key=" + key;
+  var imgurl = "http://www.apixu.com/doc/Apixu_weather_conditions.json";
   $.getJSON(url, function(data) {
-    $("#weather").html("<div id= title> Forecast: </br> </div>");
-      var "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&days=7&key=" + key;
-      $("#weather").html("<table id = forecastTable> <tr> <td> Date </td> <td> Condition </td> <td> High </td> <td> Low </td> <td> Wind </td> <td> Outlook </td> </tr>");
+    //dates
+    var days;
 
-}*/
+    var dayOne = data.forecast.forecastday[0].date;
+    var dayTwo = data.forecast.forecastday[1].date;
+    var dayThree = data.forecast.forecastday[2].date;
+    var dayFour = data.forecast.forecastday[3].date;
+    var dayFive = data.forecast.forecastday[4].date;
+    var daySix = data.forecast.forecastday[5].date;
+    var daySeven = data.forecast.forecastday[6].date;
+
+    $.getJSON(imgurl, function(info) {
+      var conditionOne = data.forecast.forecastday[0].day.condition.icon;
+      /*var conditionTwo = data.forecast.forecastday[2];
+      var conditionThree = data.forecast.forecastday[2].condition[1];
+      var conditionFour = data.forecast.forecastday[3].condition[1];
+      var conditionFive = data.forecast.forecastday[4].condition[1];
+      var conditionSix = data.forecast.forecastday[5].condition[1];
+      var conditionSeven = data.forecast.forecastday[6].condition[1];*/
+
+    console.log(conditionOne);
+    $("#forecast").html("<div id = 'tableHolder'> Forecast: </br> <table id = 'forecastTable'>" +
+        "<tr> <th> Date </th> <th> Condition </th> <th> High </th> <th> Low </th> <th>" +
+        "Wind </th> <th> Outlook </th> </tr> <tr> <td> " + dayOne + "</td> <td>" + conditionOne + " </td> </table> </div>");
+      });
+  });
+}
