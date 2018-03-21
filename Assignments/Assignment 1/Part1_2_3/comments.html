@@ -1,0 +1,65 @@
+<!-- Leon Chow 100617197 -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- header -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="styles/comments.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <!-- body -->
+  <body>
+    <div class="header">
+      <!-- image to be used in website -->
+      <div>
+        <img id="overwatch" src="images/Play Overwatch.jpg" alt="Overwatch Logo" style="width:200px;height:100px;"/>
+        Overwatch
+      </div>
+      <!-- navbar -->
+      <div class="container-fluid">
+        <ul class ="nav navbar-nav">
+          <li><a href="main.html">Main Page</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="comments.html">Comments</a></li>
+          <li><a href="tictactoe.html">Play Tic-Tac-Toe</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- contents -->
+  <div id="form">
+    <div id="comment">
+      Comments
+    </div>
+    <div id="comment-body">
+      <p> Sam: Where can I see a full description of each event? <br>
+          Bob: Are the events free of charge? </p>
+    </div>
+    <div id="fill">
+        <p> Please fill out the form below to submit a comment. </p>
+      </div>
+      <!-- form with different text boxes for user to enter a comment -->
+      <div id="fill-body">
+        <form action="/submit_comment.php">
+          Date: <br>
+          <input type="text" name="date">
+          <br>
+          First name:<br>
+          <input type="text" name="firstname">
+          <br>
+          Last name:<br>
+          <input type="text" name="lastname">
+          <br>
+          Title: <br>
+          <input type="text" name="comment_title">
+          <br>
+          Comment:<br>
+          <textarea name="Comment" cols="50" rows="5"></textarea>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

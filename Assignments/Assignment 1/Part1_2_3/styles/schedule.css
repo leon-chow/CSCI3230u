@@ -1,0 +1,25 @@
+/*header*/
+
+.header {
+  padding:1rem;
+  margin-bottom:1rem;
+  font-size:24px;
+  color:white;
+  background-color: darkBlue;
+}
+
+.navbar-nav {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/*content*/
+#content {
+  color:black;
+  font-size:12px;
+}
+
+#schedule {
+  border: 1px solid darkBlue;
+  width: 100%;
+}

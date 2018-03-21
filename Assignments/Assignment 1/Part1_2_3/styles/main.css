@@ -1,0 +1,106 @@
+/*header*/
+.header {
+  padding:1rem;
+  font-size:24px;
+  color:white;
+  background-color: darkBlue;
+  margin-bottom:1rem;
+}
+
+.navbar-nav {
+  font-weight: bold;
+  font-size: 14px;
+}
+/*content*/
+#content {
+  color:black;
+  font-size:12px;
+}
+
+#overview {
+  font-size: 14px;
+  font-weight: bold;
+  color:white;
+  margin-left:2rem;
+  margin-right:2rem;
+  background: darkBlue;
+  border: 1px solid #000070;
+  margin-bottom:1rem;
+}
+
+#overview-body {
+  font-weight: normal;
+  color:black;
+  padding:1rem;
+  background-color: #f0f0ff;
+}
+
+#overview-heading {
+  padding-left: 1rem;
+}
+
+#rules {
+  font-size: 14px;
+  font-weight: bold;
+  color:white;
+  margin-left:2rem;
+  margin-right:2rem;
+  margin-bottom:1rem;
+  background: darkBlue;
+  border: 1px solid #000070;
+}
+
+#rules-body {
+  font-weight: normal;
+  color:black;
+  padding:1rem;
+  background-color: #f0f0ff;
+}
+
+#rules-heading {
+  padding-left: 1rem;
+}
+
+#history {
+  font-size: 14px;
+  font-weight: bold;
+  color:white;
+  margin-left:2rem;
+  margin-right:2rem;
+  margin-bottom:1rem;
+  background: darkBlue;
+  border: 1px solid #000070;
+}
+
+#history-body {
+  font-weight: normal;
+  color:black;
+  padding:1rem;
+  background-color: #f0f0ff;
+}
+
+#history-heading {
+  padding-left: 1rem;
+}
+
+#links {
+  font-size: 14px;
+  font-weight: bold;
+  color:white;
+  margin-left:2rem;
+  margin-right:2rem;
+  margin-bottom:1rem;
+  background: darkBlue;
+  border: 1px solid #000070;
+}
+
+#links-body {
+  font-weight: normal;
+  color:black;
+  padding:1rem;
+  background-color: #f0f0ff;
+}
+
+#links-heading {
+  padding-left: 1rem;
+}

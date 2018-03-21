@@ -1,0 +1,86 @@
+/*header*/
+.header {
+  padding:1rem;
+  font-size:24px;
+  color:white;
+  background-color: darkBlue;
+  margin-bottom:1rem;
+}
+
+.navbar-nav {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/*game board*/
+#game-board {
+  float:left;
+  font-size: 25px;
+}
+
+#move-header {
+  text-align: center;
+  float:right;
+  padding:0.2rem;
+  font-size: 20px;
+  font-weight: bold;
+  color:white;
+  background: darkBlue;
+  border: 1px solid #000070;
+}
+
+#move-log {
+  text-align: left;
+  font-size: 14px;
+  width: 300px;
+  color:black;
+  padding:1rem;
+  border: 1px solid #000070;
+  background-color: beige;
+}
+
+#row1 {
+  border-bottom: solid black 1px;
+}
+
+#row2 {
+  border-bottom: solid black 1px;
+}
+
+#cell1 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+
+#cell2 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+
+#cell3 {
+  padding: 5rem;
+}
+#cell4 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+#cell5 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+
+#cell6 {
+  padding: 5rem;
+}
+#cell7 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+#cell8 {
+  border-right: solid black 1px;
+  padding: 5rem;
+}
+
+#cell9 {
+  padding: 5rem;
+}
