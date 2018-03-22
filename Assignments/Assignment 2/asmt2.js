@@ -1,15 +1,18 @@
 var key = "ee6968667b034938af1152649182103";
-
 $(document).ready(function() {
   $("#goButton").click( function() {
-    downloadWeather();
-    downloadForecast();
-    showMap();
+    var longitude = parseFloat($("#lon").val());
+    var latitude = parseFloat($("#lat").val());
+    if (longitude && latitude) {
+      downloadWeather(longitude, latitude);
+      downloadForecast(longitude, latitude);
+      showMap(longitude, latitude);
+    }
   })
 })
 
-function downloadWeather() {
-  var url = "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&key=" + key;
+function downloadWeather(longitude, latitude) {
+  var url = "http://api.apixu.com/v1/forecast.json?q=" + latitude + "," + longitude + "&key=" + key;
   $.getJSON(url, function(data) {
     //condition
     var condition = data.current.condition.text;
@@ -36,8 +39,8 @@ function downloadWeather() {
   });
 };
 
-function downloadForecast() {
-  var url = "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&days=7&key=" + key;
+function downloadForecast(longitude, latitude) {
+  var url = "http://api.apixu.com/v1/forecast.json?q=" + latitude + "," + longitude + "&days=7&key=" + key;
   var imgurl = "http://www.apixu.com/doc/Apixu_weather_conditions.json";
   $.getJSON(url, function(data) {
 
@@ -70,11 +73,16 @@ function downloadForecast() {
   });
 }
 
-function showMap() {
+function showMap(longitude, latitude) {
   var mapOptions = {
-	    center: { lat: 0, lng: 0 },
+	    center: { lat: latitude, lng: longitude},
 	    zoom: 8
 	};
 	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  var marker = new google.maps.Marker ({
+    position: { lat: latitude, lng: longitude},
+    map: map,
+    title: 'Hello World!'
+  });
   $("#map-canvas").append(map);
 }
