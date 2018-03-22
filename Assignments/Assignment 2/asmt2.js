@@ -1,13 +1,14 @@
+var key = "ee6968667b034938af1152649182103";
+
 $(document).ready(function() {
   $("#goButton").click( function() {
     downloadWeather();
     downloadForecast();
-    //showMap();
+    showMap();
   })
 })
 
 function downloadWeather() {
-  var key = "ee6968667b034938af1152649182103";
   var url = "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&key=" + key;
   $.getJSON(url, function(data) {
     //condition
@@ -27,16 +28,15 @@ function downloadWeather() {
 
     var feelsLike = data.current.feelslike_c;
     $("#weather").addClass("weather");
-    $("#weather").html("<div id= title> Temperature </br> </br> </div>");
+    $("#weather").html("<div id= title> <h3> Temperature </h3> </div>");
     $("#weather").append("<div>Current: " + currentTemp + "°C</br>Low: " + lowTemp + "°C</br>High:" + highTemp + "°C</br>Feels Like:" + feelsLike + "°C</div>" +
-                         "</br>Condition </br> </br>" + condition + "</br>Cloud cover:" + cloudCover + "%</br>Humidty:" + humidity +
-                         "%</br>Pressure:" + pressureMB + "mB</br> </br> Wind </br> </br> Direction:" + windDirection + "°</br>Speed: " +
+                         "<h3>Condition</h3>" + condition + "</br>Cloud cover:" + cloudCover + "%</br>Humidty:" + humidity +
+                         "%</br>Pressure:" + pressureMB + "mB </br> <h3> Wind </h3> Direction:" + windDirection + "°</br>Speed: " +
                          windSpeed + "km/h</br> </div>");
   });
 };
 
 function downloadForecast() {
-  var key = "ee6968667b034938af1152649182103";
   var url = "http://api.apixu.com/v1/forecast.json?q=43.944847,-78.891703&days=7&key=" + key;
   var imgurl = "http://www.apixu.com/doc/Apixu_weather_conditions.json";
   $.getJSON(url, function(data) {
@@ -58,12 +58,6 @@ function downloadForecast() {
       dayCondition[i] = data.forecast.forecastday[i].day.condition.icon;
     }
 
-    console.log(days);
-    console.log(dayHigh);
-    console.log(dayLow);
-    console.log(dayWind);
-    console.log(dayOutlook);
-    console.log(dayCondition);
     var forecastTable = "<table id='forecastTable' class='table'> <h3> Forecast: </h3> </br> ";
     forecastTable += "<tr border-bottom: 1px solid black; border-top: 1px solid black; border-collapse: collapse> " +
     "<th> Date </th> <th> Condition </th> <th> High </th> <th> Low </th> <th> Wind </th> <th> Outlook </th> </tr>";
@@ -76,6 +70,11 @@ function downloadForecast() {
   });
 }
 
-/*function showMap() {
-  key = "AIzaSyBbKJ0zMjCsKJJN5LtuL72dDKK5W8Uq6bk";
-}*/
+function showMap() {
+  var mapOptions = {
+	    center: { lat: 0, lng: 0 },
+	    zoom: 8
+	};
+	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  $("#map-canvas").append(map);
+}
