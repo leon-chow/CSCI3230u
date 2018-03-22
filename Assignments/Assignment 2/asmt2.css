@@ -1,3 +1,4 @@
+/*weather div */
 .weather {
   height:400px;
   border: 1px solid darkBlue;
@@ -6,11 +7,13 @@
   background-color: lightBlue;
 }
 
+/*map size*/
 .map {
   height:400px;
   width:100%;
 }
 
+/*map div */
 #map-canvas {
   padding:10px;
   margin:10px;
