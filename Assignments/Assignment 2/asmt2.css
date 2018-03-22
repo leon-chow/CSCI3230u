@@ -1,6 +1,7 @@
 /*weather div */
 .weather {
   height:400px;
+  width:100px;
   border: 1px solid darkBlue;
   padding: 10px;
   margin: 10px;
@@ -9,7 +10,6 @@
 
 /*map size*/
 .map {
-  height:400px;
   width:100%;
 }
 
@@ -17,6 +17,10 @@
 #map-canvas {
   padding:10px;
   margin:10px;
-  width:30rem;
-  height:30rem;
+  width:40rem;
+  height:40rem;
+}
+
+#rain {
+  float:left;
 }
